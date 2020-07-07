@@ -1,0 +1,121 @@
+@import "./mixins.scss";
+@import "./media.scss";
+#products{
+    @include background_color_property;
+    width: 100%;
+    height: 45%;
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#timmer{
+    @include display_property;
+    @include background_color_property;
+    width: 100%;
+    height: 18%;
+    border-bottom: 1px solid rgb(219, 212, 212);
+    justify-content: space-between;
+}
+#content{
+    @include display_property;
+    width: 30%;
+    height: 100%;
+    justify-content: space-evenly;
+}
+#heading{
+    font-size: 25px;
+    font-weight: 500;
+}
+#content-para{
+    font-size: 17px;
+    color: rgb(185, 174, 174);
+}
+#content-time{
+    font-size: 20px;
+    color: red;
+}
+#timmer-btn{
+    box-shadow: -5px 6px 18px -3px rgba(148,138,148,1);
+    background-color: #2874F0;
+    padding: 5px;
+    height: 35px;
+    width: 100px;
+    border: none;
+    margin-right: 2%;
+    color: white;
+}
+.product-list-items-content{
+    font-size: 14px;
+    margin-top: 6%;
+}
+.product-list-items-heading{
+    font-size: 14px;
+}
+.product-list-items-para{
+    color: rgb(165, 157, 157);
+}
+#products-list{
+    width: 100%;
+    height: 82%;
+}
+#product-list-items{
+    @include display_property;
+    width: 100%;
+    height: 79%;
+    justify-content: space-evenly;
+}
+.product{
+    @include display_property;
+    width: 12%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+#img1{
+    @include image_property;
+    background: url('../images/products/images.jpeg');
+}
+#img2{
+    @include image_property;
+    background: url('../images/products/fastrackWatch.jpg');
+}
+#img3{
+    @include image_property;
+    background: url('../images/products/bra.jpg');
+}
+#img4{
+    @include image_property;
+    background: url('../images/products/laptopTable.jpg');
+}
+#img5{
+    @include image_property;
+    background: url('../images/products/ledBulb.jpg');
+}
+#product6{
+    @include display_property;
+    width: 12%;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+#img6{
+    @include image_property;
+    background: url('../images/products/shoes.png');
+}
+#product7{
+    @include display_property;
+    width: 12%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+#img7{
+    @include image_property;
+    background: url('../images/products/colddrinks.jpg');
+}
+#arr-btn{
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+}

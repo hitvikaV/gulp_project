@@ -1,0 +1,28 @@
+@mixin image_property {
+    width: 100%;
+    height: 75%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@mixin display_property {
+    display: flex;
+    align-items: center;
+}
+@mixin color_property {
+    color: white;
+}
+@mixin background_color_property {
+    background-color: white;
+}
+@mixin phone_images {
+    width: 100%;
+    height: 75%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@mixin display_column {
+    display: flex;
+    flex-direction: column;
+}

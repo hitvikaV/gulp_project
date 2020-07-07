@@ -1,0 +1,160 @@
+@import "./mixins.scss";
+@import "./media.scss";
+.para-color{
+    color: rgb(151, 208, 233);
+}
+#card-prod{
+    @include display_property;
+    width: 100%;
+    height: 45%;
+    margin-top: 1%;
+    justify-content: space-evenly;
+}
+#card1{
+    width: 33%;
+    height: 90%;
+    background-image: linear-gradient(to right, #BF1D73, #9E147C);
+    border: 5px solid #F1F3F6;
+}
+#card1-heading{
+    @include color_property;
+    width: 100%;
+    height: 25%;
+    padding-top: 1%;
+    padding-left: 2%;
+}
+#card1-bottom{
+    width: 100%;
+    height: 75%;
+    display: flex;
+}
+#card1-content{
+    @include display_column;
+    width: 50%;
+    height: 100%;
+    justify-content: space-between;
+    padding-left: 3%
+}
+#card1-btn{
+    @include color_property;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 150px;
+    background-color: black;
+    border: none;
+    word-spacing: 2px;
+    margin-top: 2%;
+    font-size: 17px;
+}
+#card1-img{
+    background: url('../images/card/card1.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 100%;
+}
+#card2{
+    width: 33%;
+    height: 90%;
+    background-image: linear-gradient(to left,  #97BD28, #ACBC22);
+    border: 5px solid #F1F3F6;
+    color: black;
+}
+#card2-heading{
+    width: 100%;
+    height: 25%;
+    padding-top: 1%;
+    padding-left: 2%;
+}
+#card2-bottom{
+    width: 100%;
+    height: 75%;
+    display: flex;
+}
+#card2-content{
+    @include display_column;
+    width: 50%;
+    height: 100%;
+    justify-content: space-between;
+    padding-left: 3%
+}
+#card2-btn{
+    @include color_property;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 150px;
+    background-color: #DF232C;
+    border: none;
+    word-spacing: 2px;
+    margin-top: 2%;
+    font-size: 17px;
+}
+#card2-img{
+    background: url('../images/card/card2.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 100%;
+}
+#card3{
+    width: 33%;
+    height: 90%;
+    background-image: linear-gradient(to right,  #FFBD10, #FA8F38);
+    border: 5px solid #F1F3F6;
+    display: flex;
+}
+#card3-heading{
+    @include display_column;
+    width: 50%;
+    height: 100%;
+    padding-top: 1%;
+    padding-left: 2%;
+    justify-content: space-between;
+}
+#card3-heading-top{
+    @include display_column;
+    width: 100%;
+    height: 40%;
+    justify-content: space-around;
+}
+#card3-img{
+    background: url('../images/card/card3.PNG');
+    width: 50%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.card_heading {
+    font-size: 26px; 
+    font-weight: 500;
+}
+.card_subheading {
+    font-size: 24px;
+}
+.too_gud_text {
+    @include color_property;
+    margin-bottom: 5%; 
+}
+.too_gud_color {
+    color: #DF232C;
+}
+#last-data{
+    @include background_color_property;
+    width: 100%;
+    height: 60%;
+    margin-top: 3%;
+    border-top: 1px solid black;
+    padding-top: 3%;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+.last_para {
+    color: #848484; 
+    font-size: 14px;
+}
+.last_para_color {
+    color: #565656;
+}
