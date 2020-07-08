@@ -46,17 +46,27 @@
   #product7 {
     display: none; }
   #img1 {
-    height: 150px; }
+    height: 130px;
+    background-size: contain;
+    background-repeat: no-repeat; }
   #img2 {
-    height: 150px; }
+    height: 130px;
+    background-size: contain;
+    background-repeat: no-repeat; }
   #img3 {
-    height: 150px; }
+    height: 130px;
+    background-size: contain;
+    background-repeat: no-repeat; }
   #img4 {
-    height: 150px; }
+    height: 130px;
+    background-size: contain;
+    background-repeat: no-repeat; }
   #img5 {
-    height: 150px; }
+    height: 130px;
+    background-size: contain;
+    background-repeat: no-repeat; }
   .product-list-items-content {
-    font-size: 12px; }
+    font-size: 8px; }
   #phones-head {
     height: 15%; }
   #phones-head-content {
@@ -86,4 +96,6 @@
   #card2-btn {
     display: none; }
   #card3-btn {
-    display: none; } }
+    display: none; }
+  #card1-content {
+    margin-top: 97%; } }
