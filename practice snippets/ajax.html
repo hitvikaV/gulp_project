@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h1>Hitvika</h1>
+<button type="button" onclick="loadText()">Change Content</button>
+</div>
+
+<script>
+    readyState = 4;
+    status = 200;
+function loadText() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+  };
+  xhttp.open("GET", "ajax.txt", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
