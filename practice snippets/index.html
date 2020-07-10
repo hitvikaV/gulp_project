@@ -11,7 +11,11 @@
     }
 </style>
 <body>
+    <h1 id = "head">Test</h1>
     <p>hitvika</p>
+    <button id = "animate"> animate</button>
+    <span>Span added</span>
+    <span class="add-back">add back</span>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -43,8 +47,36 @@
     $(document).ready(function(){
         $('p').click(function(){
             $('p').css('background-color', 'yellow');
+
+        })
+        $('#head').click(function(){
+            $('#animate').animate({color : 'pink'});
         })
     })
+    $(document).ready(function(){
+        $("h1").add("span"); // add the element
+        $("p").addBack("add-back"); // adds previous element but still confuse
+        $("p").after("<p>after running</p>"); // adds element after the given element
+        $(document).ajaxComplete(function(){ // runs after the ajax request completed
+            ("p").css("color", "pink");
+        });
+        $(document).ajaxStart(function(){
+        $(this).html("<p> ajax start </p>");
+        });
+        $('p').append(" appended text")
+        $("<p> appand to text<p>").appendTo("p");
+        $('#head').attr("font-size", "100")   
+
+    })
+    var callback1 = function() {
+        console.log('Hi fromcallback one');
+    }
+    var callback2 = function() {
+        console.log('Hi from callback two')
+    }
+    var callbacks = $.Callbacks();
+    callbacks.add(callback1);
+
 </script>
 
 </html>
