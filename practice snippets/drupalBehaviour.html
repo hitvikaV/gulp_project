@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="heading">Test Drupal Behaviour</h1>
+    <button class="btn">click me</button>
+</body>
+<script>
+    Drupal.behaviours.myBehaviour = {
+        attach : function(context, setting){
+            $(context).find('.btn').click(function(){
+                alert('drupal behaviour running');
+            })
+        }
+    }
+</script>
+</html>

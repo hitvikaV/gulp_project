@@ -1,0 +1,43 @@
+AJAX:
+1. AJAX stands for async javascript and XML
+2. It s a set of technologies
+3. AJAX help to fetch data asyncronously without interfering page data
+4. No page reload
+Working:        - uses XMLHttpRequest object
+                - data can be fetched in any format and also with any protocol
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note: CDN = content delivery network

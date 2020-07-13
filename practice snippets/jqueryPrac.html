@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .add-class-test{
+        color: blue;
+    }
+    .and-self-test{
+        color: cornflowerblue;;
+    }
+    .bind-test{
+        background-color: crimson;
+    }
+    .change-test{
+        color: darkblue;
+    }
+    .dequeue-test{
+        background-color: firebrick;
+    }
+    .each-test{
+        color: indianred;
+    }
+</style>
+<body>
+    <h1 id="addEx">Testing add</h1>
+    <span>span added</span>
+    <span>add-back runs</span>
+    <p id="add-class">add class example</p>
+    <span id="afterTest">After test text</span>
+    <div>
+        <p id="andSelfEx">and self example</p>
+    </div>
+    <div id="animate" style="width: 100px; height: 100px; background-color: crimson;"></div>
+    <button id="animateBtn">Animate</button>
+    <p id="appendTxt">append example</p>
+    <span id="appendToTxt">append to example</span>
+    <span id="appendToRun">append to text run<span>
+        <br>
+    <input type="checkbox" id="check" checked>
+    <label for="">Checkbox 1</label>
+    <span id="attrAns"></span>
+    <br><br>
+    <span id="beforeEx">Before Test Text</span>
+    <span id="beforeRun">Before Runs </span>
+    <br>
+    <br>
+    <button id="bindBtn">Bind Example</button>
+    <span id="bindEx">Bind Example</span>
+    <br><br>
+    <input type="text" id="blurIn">
+    <br><br>
+    <input type="text" id="changeRun">
+    <br><br> 
+    <div id="parentDiv">
+        <div class="childDiv">children div</div>
+    </div>
+    <br>
+    <div id="stopEx">stop example</div>
+    <button id="stopBtn">stop example</button>
+    <br><br>
+    <div class="cloneContainer">
+        <div class="cloneEx">clone example</div>
+        <div class="cloneTest">clone test</div>
+    </div>
+    <div id="parentClosest">
+        <p>parent closest example</p>
+        <div id="childClosest"></div>
+    </div>
+    <p id="contentEx">Content example</p>
+    <p id="contextMenuEx">Context menu example</p>
+    <div id="dataEx">
+        <span id="dataOne"></span>
+        <span id="dataTwo"></span>
+    </div>
+    <p id="dblClickEx">Double click here</p>
+    <p id="delayEx">delay example</p>
+    <p><button id="delayBtn">Run</button></p>
+    <div class="first" style="width: 50px; height: 50px; background-color: darkred;"></div>
+    <p id="deligateEx">Deligate Example</p>
+    <br>
+    <button id="dequeueBtn">deQueue Ex</button><br> <br>
+    <div id="dequeueEx" style="width: 50px; height: 50px; background-color: deeppink;"></div>
+    <p id="dieEx">die example</p>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+    </ul>
+    <button id="emptyBtn">Click to Empty</button>
+    <p id="emptyEx">Empty Text test</p>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){ // runs whn the DOM is ready or loaded
+            $('#addEx').add('span');
+            $("p").addBack("add-back");
+            $("#add-class").addClass('add-class-test');
+            $("#afterTest").after("<span> after running</span>")
+            $('div').find('p').addClass('and-self-test')
+            $('#animateBtn').click(function() {
+                $('#animate').animate({width: "200px", height: "200px"})
+            })
+            $('#appendTxt').append(' append text');
+            $('appentToTxt').appendTo('#appendToRun')
+            $('#attrAns').html($('#check').attr("checked"));
+            $('#beforeEx').before($("#beforeRun"));
+            $('#bindBtn').bind("mouseenter mouseleave", function(){
+                $('#bindEx').toggleClass('bind-test');
+            })
+            $('#blurIn').blur(function() {
+                alert('focused lost')
+            })
+            $('#changeRun').change(function() { // short for on change function
+                alert('change run');
+            })
+            $('#parentDiv').children().css("color", "red"); // find child
+            $('#stopBtn').click(function(){ // remove all items that have not been run yet
+                var myDiv = $('#stopEx');
+                myDiv.clearQueue();
+                myDiv.stop();
+            });
+            $('.cloneEx').clone().appendTo(".cloneTest"); // make a copy
+            $("#parentClosest").closest().css("color", "royalblue"); // find parent
+            $('#contentEx').contents().wrap('<i><i>'); // get the content of element
+            $('#contextMenuEx').contextmenu(function(){
+                alert('context menu run');
+            })
+            $("div").data("#dataEx", { firstName: 'hitvika', lastName: 'verma' }); // saves and show data
+            $('#dataOne').text($('div').data('#dataEx').firstName);
+            $('#dataTwo').text($('div').data('#dataEx').lastName);
+            $('#dblClickEx').dblclick(function(){
+                alert('double click runs')
+            })
+            // $.get('test.php').always(function(){
+            //     // alert('always runs')
+            // })
+            // $.get('php.test')
+            //     .then(function(){
+            //         // alert('success');
+            //     })
+            //     .catch(function(){
+            //         // alert('failed')
+            //     })
+            // $.get('test.php')
+            // .done(function(){
+            //     // alert('don runs')
+            // })
+            // .fail(function(){
+            //     // alert('fail runs')
+            // })
+            // var defer = $.Deferred(),
+            // filtered = defer.pipe(function( value ) {
+            //     return value * 2;
+            // });
+            // defer.resolve( 5 );
+            // filtered.done(function( value ) {
+            //     // alert( "Value is ( 2*5 = ) 10: " + value );
+            // });
+            $( "#delayBtn" ).click(function() {
+                $( "div.first" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+            });
+            $( "body" ).delegate( "#deligateEx", "click", function() {
+                $( this ).after( "<p>Another paragraph added by deligate!</p>" );
+            });
+            $('#dequeueBtn').click(function(){
+                $('#dequeueEx')
+                    .animate({width: "300px"}, 2000)
+                    .animate({height: "100px"}, 600)
+                    .queue(function(){
+                        $(this).toggleClass("dequeue-test").dequeue();
+                    })
+                    .animate({ width: "50px", height: "50px"}, 700 );
+            })
+            // $('#dieEx').live('click', function(){
+            //     alert('live runs')
+            // })
+            // $('#dieEx').die("click", function(){
+            //     alert('die runs')
+            // })
+            $('li').each(function(index){
+                $('li').addClass('each-test')
+            })
+            $('#emptyBtn').click(function(){
+                $('#emptyEx').empty()
+            })
+    })
+    var callback1 = function(){
+        console.log("hi from callback one")
+    }
+    var callback2 = function() {
+        console.log("hi from callback two")
+    }
+    var callback3 = function() {
+        console.log('Hi from callback 3');
+    }
+    var callbacks = $.Callbacks();
+    callbacks.add(callback1);
+    callbacks.fire();
+    console.log(callbacks.fireWith(window)); // show this for the callback
+    console.log(callbacks.fired()); // determine if callback has called atleast once
+    callbacks.empty(); // empty callback list
+    console.log(callbacks.has(callback1));
+    callbacks.disable(); // stops other calls
+    callbacks.add(callback2);
+    callbacks.fire();
+    console.log(callbacks.disabled()); // show if disable is on or not
+    callbacks.add(callback3);
+    callbacks.lock();
+    console.log(callbacks.locked());
+    callbacks.remove(callback3);
+</script>
+</html>
